@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "LapinskasL",
+  "sourceName": "Template.Mvc",
+  "name": "Configurable MVC Template",
+  "identity": "Dotnet.Custom.Configurable.Mvc.CSharp",
+  "description": "A configurable MVC project template allowing you to add a number of functionalities.",
+  "shortName": "config-mvc",
+  "defaultName": "MyProject",
+  "classifications": [ "Web" ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "netcoreapp3.1",
+          "description": "Target netcoreapp3.1"
+        }
+      ],
+      "replaces": "netcoreapp3.1",
+      "defaultValue": "netcoreapp3.1"
+    }
+  },
+  "HttpsPort": {
+    "type": "parameter",
+    "datatype": "integer",
+    "description": "Port number to use for the HTTPS endpoint in launchSettings.json."
+  },
+  "HttpsPortGenerated": {
+    "type": "generated",
+    "generator": "port",
+    "parameters": {
+      "low": 44300,
+      "high": 44399
+    }
+  },
+  "HttpsPortReplacer": {
+    "type": "generated",
+    "generator": "coalesce",
+    "parameters": {
+      "sourceVariableName": "HttpsPort",
+      "fallbackVariableName": "HttpsPortGenerated"
+    },
+    "replaces": "44345"
+  }
+}
