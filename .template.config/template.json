@@ -4,7 +4,7 @@
   "sourceName": "Template.Mvc",
   "name": "Configurable MVC Template",
   "identity": "Dotnet.Custom.Configurable.Mvc.CSharp",
-  "description": "A configurable MVC project template allowing you to add a number of functionalities.",
+  "description": "A configurable MVC project template allowing you to add a number of features.",
   "shortName": "config-mvc",
   "defaultName": "MyProject",
   "classifications": [ "Web" ],
@@ -25,6 +25,12 @@
       ],
       "replaces": "netcoreapp3.1",
       "defaultValue": "netcoreapp3.1"
+    },
+    "NLog": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Adds NLog logging platform.",
+      "defaultValue": "true"
     }
   },
   "HttpsPort": {
